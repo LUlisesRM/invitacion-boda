@@ -1,6 +1,6 @@
 //sources/scripts/contador.js
-const misaDate = new Date("2025-07-19T08:00:00").getTime();
-const fiestaDate = new Date("2025-07-19T15:00:00").getTime();
+const misaDate = new Date("2025-11-29T08:00:00").getTime();
+const fiestaDate = new Date("2025-11-29T15:00:00").getTime();
 const wrapper = document.querySelector(".countdown-wrapper");
 
 function pad(num) {

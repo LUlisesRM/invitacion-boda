@@ -31,12 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
           <h3 class="second-head-title fade-in"><img src="sources/images/icon-whp.svg" class="imgwa"> WhatsApp:</h3>
           <div class="confirmacion-wa fade-in">
             <div class="contacto-wa">
-              <img src="sources/pictures/mama.jpeg" alt="Mama" id="mama" class="palpitar">
-              <p>Mamá</p>
+              <img src="sources/pictures/mama.jpeg" alt="Novia" id="mama" class="palpitar">
+              <p>Novia</p>
             </div>
             <div class="contacto-wa">
-              <img src="sources/pictures/papa.jpeg" alt="Papa" id="papa" class="palpitar">
-              <p>Papá</p>
+              <img src="sources/pictures/papa.jpeg" alt="Novio" id="papa" class="palpitar">
+              <p>Novio</p>
             </div>
           </div>
         `;
