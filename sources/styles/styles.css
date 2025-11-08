@@ -1,0 +1,573 @@
+body {
+  background-image: url('../images/novios.jpg');
+  background-color: #1a2547;
+
+  margin: 0;
+  padding: 0;
+  background-size: auto;
+  background-position: top left;
+  background-attachment: scroll;
+  text-align: center;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+
+img {
+  max-width: 90%;
+  border-radius: 15px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 10px;
+  background-color: #3C5789;
+  color: white;
+  cursor: pointer;
+}
+
+h2 {
+  margin: 10px 0;
+  font-size: 33px;
+  font-family: 'Great Vibes', sans-serif;
+}
+
+h3 {
+  color: gray;
+
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.intro-modal {
+  position: fixed;
+  z-index: 9999;
+  background-color: #d7d7d7;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #9fa0a8;
+  font-family: 'Great Vibes', cursive;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.intro-modal.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.intro-text {
+  position: relative;
+  z-index: 1;
+  font-size: 45px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.intro-img {
+  position: relative;
+  z-index: 1;
+  width: 200px;
+  max-width: 80%;
+  transition: transform 0.3s;
+  transform: scale(1);
+}
+
+.intro-img:hover {
+  transform: scale(1.2);
+}
+
+.intro-img.clicked {
+  transform: scale(1.2);
+ 
+}
+
+.seal-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.solapa {
+  position: absolute;
+  width: 300px;
+  height: 4px;
+  background-color: #b69a6f;
+  transform-origin: center;
+
+  z-index: 1;
+}
+
+
+.solapa-superior-izquierda {
+  left: -95%;
+  transform: rotate(45deg);
+}
+
+
+.solapa-superior-derecha {
+  right: -95%;
+  transform: rotate(-45deg);
+}
+
+.solapa-inferior-izquierda {
+  left: -120%;
+  top: 100%;
+  transform: rotate(-45deg);
+}
+
+.solapa-inferior-derecha {
+  right: -120%;
+  top: 100%;
+  transform: rotate(45deg);
+}
+
+/*BOTON DE AUDIO*/
+#mute-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border: none;
+  outline: none;
+  z-index: 1000;
+  cursor: pointer;
+  background-color: transparent;
+  display: none;
+}
+
+#mute-toggle.unmuted {
+  background-image: url('../images/audio.svg');
+}
+
+#mute-toggle.muted {
+  background-image: url('../images/mute.svg');
+}
+
+.logo-horse {
+  width: 200px;
+}
+
+
+/*MODULOS*/
+.header {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+
+.header-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.2s ease;
+}
+
+.header-visible {
+  opacity: 1;
+  pointer-events: auto;
+  margin-bottom: 70px;
+}
+
+div.header h2 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.module.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.module {
+  background-color: white;
+  padding: 20px;
+  align-items: center;
+  margin: 10px;
+  margin-top: 40px;
+  width: 80%;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: #EEC274;
+  border-width: 5px;
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.modulo-carrusel {
+
+  border-radius: 20px;
+
+  border-width: 5px;
+  /* display: -webkit-inline-box; */
+  flex-direction: column;
+  align-items: center;
+  width: 280px;
+}
+
+/*CARRUSEL*/
+
+:root {
+    --carousel-speed: 30s;
+    --carousel-gap: 4rem;
+    --carousel-padding: 3.75rem;
+    --logo-width: 7rem; /* ¡REDUCIDO! Ancho deseado para todas las imágenes en desktop */
+    --logo-height: 7rem; /* ¡REDUCIDO! Altura deseada para todas las imágenes en desktop */
+    --gradient-width: 15%;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --carousel-padding: 2rem;
+        --carousel-gap: 2rem;
+        --logo-width: 15.5rem; /* ¡REDUCIDO! Ancho para móviles, adecuado para invitación */
+        --logo-height: 17.5rem; /* ¡REDUCIDO! Altura para móviles */
+    }
+}
+
+
+.carousel-container {
+    position: relative;
+    padding-block: var(--carousel-padding);
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    column-gap: var(--carousel-gap);
+    width: fit-content;
+    flex-shrink: 0;
+}
+
+.logos {
+    display: flex;
+    column-gap: var(--carousel-gap);
+    animation: scroll var(--carousel-speed) linear infinite;
+    will-change: transform;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+/* --- ¡CAMBIO AQUÍ! Usamos la clase específica para las imágenes del carrusel --- */
+.carousel-image {
+    width: var(--logo-width);
+    height: var(--logo-height);
+    object-fit: cover;
+    transition: scale 0.2s ease-in-out;
+    user-select: none;
+    cursor: grab;
+}
+
+.carousel-image:hover {
+    scale: 1.10;
+}
+
+.carousel-container:hover .logos {
+    animation-play-state: paused;
+}
+
+.dragging {
+    cursor: grabbing;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-1 * var(--logos-total-block-width)));
+    }
+}
+
+
+/*CONTADOR*/
+.countdown-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.countdown-item {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 12px;
+  min-width: 80px;
+  border-style: solid;
+  border-color: #EEC274;
+  border-width: 5px;
+}
+
+.countdown-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.countdown-label {
+  font-size: 25px;
+  color: #777;
+  font-family: "Great Vibes", Sans-serif;
+
+}
+
+.countdown-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.countdown-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffffff;
+  font-family: "Great Vibes", Sans-serif;
+  text-align: center;
+}
+
+
+
+.countdown-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+
+.carta {
+  background-color: #f8e1bc;
+  border-style: double;
+  border-width: 10px;
+  border-color: #e0c67d;
+  border-radius: 35px 0px 35px 0px;
+  padding: 20px;
+  margin: 20px;
+  width: 85%;
+}
+
+.divider {
+  width: 20%;
+  height: 2px;
+  background-color: #3C5789;
+  margin: 10px auto;
+}
+
+
+
+.rounded-full {
+  border-radius: 30px;
+}
+
+
+
+
+.second-head-title {
+  color: #1A2547;
+  font-family: "Great Vibes", Sans-serif;
+  font-size: 33px;
+  margin: 10px;
+  font-family: 'Great Vibes', sans-serif;
+}
+
+.head-title {
+  color: #EEC274;
+  font-size: 50px;
+  margin: 0;
+  font-family: 'Great Vibes', sans-serif;
+
+}
+
+
+@keyframes palpitar {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.palpitar {
+  animation: palpitar 1.5s infinite;
+  transition: transform 0.2s;
+}
+
+
+
+/*MODAL CONFIRMACION*/
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* fondo translúcido */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+
+/* Botón de cierre (X) */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  opacity: 1;
+}
+
+
+/* Contenido animado del modal */
+.modal-content {
+  animation: fadeInFromTop 0.4s ease-out forwards;
+}
+
+/* Animación: fade in desde arriba */
+.fade-in {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInFromTop 0.4s ease-out forwards;
+}
+
+@keyframes fadeInFromTop {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.hidden {
+  display: none;
+}
+
+/* WhatsApp confirmación */
+.confirmacion-wa {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 1.5rem;
+}
+
+.contacto-wa img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.imgwa {
+  padding-right: 8px;
+  width: 30px;
+  margin: -5px;
+}
+
+.contacto-wa p {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-weight: bold;
+
+  color: gray;
+}
+
+
+/*GUIDEDANCE*/
+.guide-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10001;
+  display: none;
+  justify-content: center;
+  align-items: flex-start;
+  pointer-events: auto;
+  opacity: 0;
+  transition: none;
+  display: none;
+  padding-top: 300px;
+}
+
+.guide-overlay.visible {
+  opacity: 1;
+  display: flex;
+}
+
+.lottie-guide {
+  position: absolute;
+  width: 250px;
+  opacity: 0.9;
+  pointer-events: none;
+  animation: fadeInOnce 0.9s ease forwards;
+}
+
+@keyframes fadeLoop {
+  0% { opacity: 1; }
+  70% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.lottie-guide.flicker {
+  animation: fadeLoop 3s ease-in-out infinite;
+}
+
+@keyframes fadeInOnce {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
