@@ -1,6 +1,6 @@
 //sources/scripts/contador.js
-const misaDate = new Date("2025-11-29T08:00:00").getTime();
-const fiestaDate = new Date("2025-11-29T15:00:00").getTime();
+const misaDate = new Date("2025-11-29T17:30:00").getTime();
+const fiestaDate = new Date("2025-11-29T17:30:00").getTime();
 const wrapper = document.querySelector(".countdown-wrapper");
 
 function pad(num) {
@@ -58,7 +58,7 @@ function updateCountdown() {
     updateTimer(fiestaDate - now, "fiesta");
   } else if (now >= fiestaDate) {
     if (currentPhase !== "fiesta") {
-      renderMainCountdown("Fiesta - 15:00 hrs.");
+      renderMainCountdown("Fiesta - 17:30 hrs.");
       currentPhase = "fiesta";
     }
     updateTimer(fiestaDate - now, "main");
