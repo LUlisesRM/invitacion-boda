@@ -24,7 +24,7 @@ button {
   font-size: 1em;
   border: none;
   border-radius: 10px;
-  background-color: #3C5789;
+  background-color: #000;
   color: white;
   cursor: pointer;
 }
@@ -54,7 +54,7 @@ h3 {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #9fa0a8;
+  color: #d3c08d;
   font-family: 'Great Vibes', cursive;
   opacity: 1;
   transition: opacity 1s ease;
@@ -156,8 +156,8 @@ h3 {
   background-image: url('../images/mute.svg');
 }
 
-.logo-horse {
-  width: 200px;
+.logo-silueta {
+  scale: 200px;
 }
 
 
@@ -295,10 +295,10 @@ div.header h2 {
 
 .carta {
   background-color: #413f40;
-  border-style: double;
-  border-width: 10px;
+  border-style: solid;
+  border-width: 3px;
   border-color: #eeeeee;
-  border-radius: 35px 0px 35px 0px;
+  border-radius: 35px 35px 35px 35px;
   padding: 20px;
   margin: 20px;
   width: 85%;
@@ -307,7 +307,7 @@ div.header h2 {
 .divider {
   width: 20%;
   height: 2px;
-  background-color: #3C5789;
+  background-color: #000;
   margin: 10px auto;
 }
 
@@ -321,7 +321,7 @@ div.header h2 {
 
 
 .second-head-title {
-  color: #1A2547;
+  color: #000;
   font-family: "Great Vibes", Sans-serif;
   font-size: 33px;
   margin: 10px;

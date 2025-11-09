@@ -31,28 +31,28 @@ document.addEventListener('DOMContentLoaded', () => {
           <h3 class="second-head-title fade-in"><img src="sources/images/icon-whp.svg" class="imgwa"> WhatsApp:</h3>
           <div class="confirmacion-wa fade-in">
             <div class="contacto-wa">
-              <img src="sources/pictures/mama.jpeg" alt="Novia" id="mama" class="palpitar">
+              <img src="sources/pictures/novia.jpeg" alt="Novia" id="novia" class="palpitar">
               <p>Novia</p>
             </div>
             <div class="contacto-wa">
-              <img src="sources/pictures/papa.jpeg" alt="Novio" id="papa" class="palpitar">
+              <img src="sources/pictures/novio.jpeg" alt="Novio" id="papa" class="palpitar">
               <p>Novio</p>
             </div>
           </div>
         `;
 
         // Conectar eventos a los nuevos botones
-        document.getElementById('mama').addEventListener('click', () => {
+        document.getElementById('novia').addEventListener('click', () => {
           modal.classList.add('hidden');
           window.scrollTo({ top: 0, behavior: 'smooth' });
-          window.open('https://wa.me/5215613683435?text=Hola%20Sam%20%F0%9F%98%81%0AClaro%20que%20asistir%C3%A9%20%F0%9F%A5%B0%0A%C2%A1Confirmo%20mi%20Asistencia!%20%F0%9F%91%8D', '_blank');
+          window.open('https://wa.me/525614097155?text=Hola%20Sam%20%F0%9F%98%81%0AClaro%20que%20asistir%C3%A9%20%F0%9F%A5%B0%0A%C2%A1Confirmo%20mi%20Asistencia!%20%F0%9F%91%8D', '_blank');
  
         });
 
         document.getElementById('papa').addEventListener('click', () => {
           modal.classList.add('hidden');
           window.scrollTo({ top: 0, behavior: 'smooth' });
-          window.open('https://wa.me/5215611347845?text=Hola%20Carlos%20%F0%9F%98%81%0AClaro%20que%20asistir%C3%A9%20%F0%9F%A5%B0%0A%C2%A1Confirmo%20mi%20Asistencia!%20%F0%9F%91%8D', '_blank');
+          window.open('https://wa.me/525626707475?text=Hola%20Carlos%20%F0%9F%98%81%0AClaro%20que%20asistir%C3%A9%20%F0%9F%A5%B0%0A%C2%A1Confirmo%20mi%20Asistencia!%20%F0%9F%91%8D', '_blank');
         });
       });
     }
