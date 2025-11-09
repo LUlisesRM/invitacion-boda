@@ -45,14 +45,14 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('novia').addEventListener('click', () => {
           modal.classList.add('hidden');
           window.scrollTo({ top: 0, behavior: 'smooth' });
-          window.open('https://wa.me/525614097155?text=Hola%20Sam%20%F0%9F%98%81%0AClaro%20que%20asistir%C3%A9%20%F0%9F%A5%B0%0A%C2%A1Confirmo%20mi%20Asistencia!%20%F0%9F%91%8D', '_blank');
+          window.open('https://wa.me/525614097155?text=Hola%20Yocelyn%20%F0%9F%98%81%0AClaro%20que%20asistir%C3%A9%20%F0%9F%A5%B0%0A%C2%A1Confirmo%20mi%20Asistencia!%20%F0%9F%91%8D', '_blank');
  
         });
 
         document.getElementById('papa').addEventListener('click', () => {
           modal.classList.add('hidden');
           window.scrollTo({ top: 0, behavior: 'smooth' });
-          window.open('https://wa.me/525626707475?text=Hola%20Carlos%20%F0%9F%98%81%0AClaro%20que%20asistir%C3%A9%20%F0%9F%A5%B0%0A%C2%A1Confirmo%20mi%20Asistencia!%20%F0%9F%91%8D', '_blank');
+          window.open('https://wa.me/525626707475?text=Hola%20Gerardo%20%F0%9F%98%81%0AClaro%20que%20asistir%C3%A9%20%F0%9F%A5%B0%0A%C2%A1Confirmo%20mi%20Asistencia!%20%F0%9F%91%8D', '_blank');
         });
       });
     }
